@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dqa8d2wf5ydk0"]
+
+[ext_resource type="Script" uid="uid://ca728ctxxv62x" path="res://jugador_solo.gd" id="1_vqg4e"]
+[ext_resource type="Texture2D" uid="uid://cpjjwhkfp0y3a" path="res://icon.svg" id="2_vqg4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71u0u"]
+size = Vector2(37.15153, 33.82829)
+
+[node name="JugadorSolo" type="CharacterBody2D" unique_id=431777875]
+script = ExtResource("1_vqg4e")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=735372412]
+position = Vector2(8.777419, -5.088435)
+scale = Vector2(0.28472778, 0.2642432)
+texture = ExtResource("2_vqg4e")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2127390625]
+texture_filter = 1
+position = Vector2(8.719429, -5.0884323)
+skew = -0.017453313
+shape = SubResource("RectangleShape2D_71u0u")
+metadata/_edit_group_ = true
+
+[node name="dasheo" type="Timer" parent="." unique_id=1877927003]
+
+[node name="CargadorDash" type="Timer" parent="." unique_id=490952943]
+
+[connection signal="timeout" from="dasheo" to="." method="_on_dasheo_timeout"]
+[connection signal="timeout" from="CargadorDash" to="." method="_on_cargador_dash_timeout"]
